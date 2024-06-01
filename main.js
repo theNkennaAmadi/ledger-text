@@ -218,6 +218,7 @@ textElements.forEach((textElement) => {
     const scrollOnce = textElement.getAttribute('data-scroll-once') ? textElement.getAttribute('data-scroll-once') === 'true' : true;
     const duration = parseInt(textElement.getAttribute('data-duration')) || 750;
     const delay = parseInt(textElement.getAttribute('data-delay')) || 5000;
+    const showMarker = textElement.getAttribute('data-show-marker') ? textElement.getAttribute('data-show-marker') === 'true' : false;
 
     ts.initialize(triggerType, duration);
 
@@ -237,7 +238,8 @@ textElements.forEach((textElement) => {
                 end: 'bottom top',
                 onEnter: triggerEffect,
                 onLeaveBack: scrollOnce ? null : () => ts.resetCells(),
-                once: scrollOnce
+                once: scrollOnce,
+                markers: showMarker
             });
             break;
         default:
