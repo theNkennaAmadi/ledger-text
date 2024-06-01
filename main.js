@@ -216,7 +216,7 @@ textElements.forEach((textElement) => {
     const ts = new TypeShuffle(textElement);
     const triggerType = textElement.getAttribute('data-trigger') || 'click';
     const scrollOnce = textElement.getAttribute('data-scroll-once') ? textElement.getAttribute('data-scroll-once') === 'true' : true;
-    const scrollStart = textElement.getAttribute('data-scroll-start') || '90';
+    const scrollStart = textElement.getAttribute('data-scroll-start') || '100';
     const duration = parseInt(textElement.getAttribute('data-duration')) || 750;
     const delay = parseInt(textElement.getAttribute('data-delay')) || 5000;
     const showMarker = textElement.getAttribute('data-show-marker') ? textElement.getAttribute('data-show-marker') === 'true' : false;
