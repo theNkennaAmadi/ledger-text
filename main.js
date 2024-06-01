@@ -216,6 +216,7 @@ textElements.forEach((textElement) => {
     const ts = new TypeShuffle(textElement);
     const triggerType = textElement.getAttribute('data-trigger') || 'click';
     const scrollOnce = textElement.getAttribute('data-scroll-once') ? textElement.getAttribute('data-scroll-once') === 'true' : true;
+    const scrollStart = textElement.getAttribute('data-scroll-start') || '90';
     const duration = parseInt(textElement.getAttribute('data-duration')) || 750;
     const delay = parseInt(textElement.getAttribute('data-delay')) || 5000;
     const showMarker = textElement.getAttribute('data-show-marker') ? textElement.getAttribute('data-show-marker') === 'true' : false;
@@ -234,7 +235,7 @@ textElements.forEach((textElement) => {
         case 'scroll':
             ScrollTrigger.create({
                 trigger: textElement,
-                start: 'top 75%',
+                start: `top ${scrollStart}%`,
                 end: 'bottom top',
                 onEnter: triggerEffect,
                 onLeaveBack: scrollOnce ? null : () => ts.resetCells(),
