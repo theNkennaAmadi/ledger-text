@@ -215,7 +215,7 @@ const textElements = [...document.querySelectorAll('[data-effect="glitch"]')];
 textElements.forEach((textElement) => {
     const ts = new TypeShuffle(textElement);
     const triggerType = textElement.getAttribute('data-trigger') || 'click';
-    const scrollOnce = textElement.getAttribute('data-scroll-once') === 'true';
+    const scrollOnce = textElement.getAttribute('data-scroll-once') ? textElement.getAttribute('data-scroll-once') === 'true' : true;
     const duration = parseInt(textElement.getAttribute('data-duration')) || 750;
     const delay = parseInt(textElement.getAttribute('data-delay')) || 5000;
 
