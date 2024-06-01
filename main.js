@@ -236,7 +236,6 @@ textElements.forEach((textElement) => {
             ScrollTrigger.create({
                 trigger: textElement,
                 start: `top ${scrollStart}%`,
-                end: 'bottom top',
                 onEnter: triggerEffect,
                 onLeaveBack: scrollOnce ? null : () => ts.resetCells(),
                 once: scrollOnce,
