@@ -242,6 +242,9 @@ textElements.forEach((textElement) => {
                 markers: showMarker
             });
             break;
+        case 'hover':
+            textElement.addEventListener('mouseover', triggerEffect);
+            break;
         default:
             textElement.addEventListener('click', triggerEffect);
             break;
